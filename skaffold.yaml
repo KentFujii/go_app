@@ -4,10 +4,10 @@ build:
   artifacts:
   - imageName: primary
     workspace: ./primary/
-  - imageName: gcr.io/k8s-skaffold/leeroy-app
-    workspace: net
+  # - imageName: gcr.io/k8s-skaffold/leeroy-app
+  #   workspace: net
 deploy:
   kubectl:
     manifests:
     - ./primary/kubernetes/*
-    - ./net/kubernetes/*
+    # - ./net/kubernetes/*

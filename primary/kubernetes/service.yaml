@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: primary
+  labels:
+    app: primary
+spec:
+  clusterIP: None
+  ports:
+    - port: 50051
+      targetPort: 50051
+      protocol: TCP
+      name: primary
+  selector:
+    app: primary
