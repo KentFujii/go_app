@@ -6,7 +6,7 @@ https://github.com/GoogleContainerTools/skaffold/tree/master/examples/microservi
 
 https://qiita.com/tomoyamachi/items/660bd7bb3afff8340307
 
-## Go言語はWebアプリ開発に最適な言語
+## 簡単なWebアプリケーション
 
 ## net/httpライブラリを使ったリクエストの受け付け
 
