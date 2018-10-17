@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: primary
+  name: handling
   labels:
-    app: primary
+    app: handling
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: primary
+      app: handling
   template:
     metadata:
       labels:
-        app: primary
+        app: handling
     spec:
       containers:
-      - name: primary
-        image: primary
+      - name: handling
+        image: handling
         ports:
-        - containerPort: 50001
+        - containerPort: 50002

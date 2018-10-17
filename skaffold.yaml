@@ -4,7 +4,10 @@ build:
   artifacts:
   - image: primary
     context: ./primary/
+  - image: handling
+    context: ./handling/
 deploy:
   kubectl:
     manifests:
     - ./primary/kubernetes/*
+    - ./handling/kubernetes/*
