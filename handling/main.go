@@ -2,7 +2,7 @@ package main
 
 import (
 	"net/http"
-	"app/simplest"
+	"simplest"
 )
 
 func main() {

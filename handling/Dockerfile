@@ -14,7 +14,7 @@ ENV PATH $PATH:/usr/local/go/bin
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN go get -u github.com/derekparker/delve/cmd/dlv
 
-WORKDIR /go/src/app
-COPY . /go/src/app
-RUN go build
-CMD ["./app"]
+WORKDIR /go/src
+COPY . /go/src
+RUN go build -o handling
+CMD ["./handling"]
