@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: displaying
+  labels:
+    app: displaying
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: displaying
+  template:
+    metadata:
+      labels:
+        app: displaying
+    spec:
+      containers:
+      - name: displaying
+        image: displaying
+        ports:
+        - containerPort: 50004

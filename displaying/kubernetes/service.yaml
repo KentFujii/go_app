@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: displaying
+  labels:
+    app: displaying
+spec:
+  clusterIP: None
+  ports:
+    - port: 50004
+      targetPort: 50004
+      protocol: TCP
+      name: displaying
+  selector:
+    app: displaying
