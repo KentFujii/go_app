@@ -18,6 +18,10 @@ handling
 
 processing
 
+## テンプレートエンジンを使ったコンテンツの表示
+
+displaying
+
 ## データの記憶: 構造体・ファイル・データベース
 
 storing
