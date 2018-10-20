@@ -15,5 +15,5 @@ RUN go get -u github.com/derekparker/delve/cmd/dlv
 
 WORKDIR /go/src
 COPY . /go/src
-RUN go build -o primary
-CMD ["./primary"]
+RUN go build -o processing
+CMD ["./processing"]

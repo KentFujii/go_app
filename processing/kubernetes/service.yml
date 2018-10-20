@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: processing
+  labels:
+    app: processing
+spec:
+  clusterIP: None
+  ports:
+    - port: 50003
+      targetPort: 50003
+      protocol: TCP
+      name: processing
+  selector:
+    app: processing

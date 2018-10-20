@@ -6,8 +6,11 @@ build:
     context: ./primary/
   - image: handling
     context: ./handling/
+  # - image: processing
+  #   context: ./processing/
 deploy:
   kubectl:
     manifests:
     - ./primary/kubernetes/*
     - ./handling/kubernetes/*
+    # - ./processing/kubernetes/*
