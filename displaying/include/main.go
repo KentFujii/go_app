@@ -1,0 +1,21 @@
+package include
+
+import (
+	"html/template"
+	"net/http"
+	"runtime"
+	"path"
+)
+
+func Process(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles(templatePath("t1.html"), templatePath("t2.html"))
+	t.Execute(w, "Hello World!")
+}
+
+func templatePath(name string) string {
+	_, filename, _, ok := runtime.Caller(0)
+	if !ok {
+		panic("No caller information")
+	}
+	return path.Dir(filename) + "/" + name
+}
