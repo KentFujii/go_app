@@ -8,6 +8,9 @@ import (
 	"set_dot"
 	"include"
 	"custom_function"
+	"context_aware"
+	"nested_1"
+	"nested_2"
 )
 
 func main() {
@@ -17,6 +20,9 @@ func main() {
 	http.HandleFunc("/set_dot", set_dot.Process)
 	http.HandleFunc("/include", include.Process)
 	http.HandleFunc("/custom_function", custom_function.Process)
+	http.HandleFunc("/context_aware", context_aware.Process)
+	http.HandleFunc("/nested_1", nested_1.Process)
+	http.HandleFunc("/nested_2", nested_2.Process)
 
 	http.ListenAndServe(":50004", nil)
 
