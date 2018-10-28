@@ -4,22 +4,22 @@ build:
   artifacts:
   - image: db
     context: ./db/
-  # - image: primary
-  #   context: ./primary/
-  # - image: handling
-  #   context: ./handling/
-  # - image: processing
-  #   context: ./processing/
-  # - image: displaying
-  #   context: ./displaying/
+  - image: primary
+    context: ./primary/
+  - image: handling
+    context: ./handling/
+  - image: processing
+    context: ./processing/
+  - image: displaying
+    context: ./displaying/
   - image: storing
     context: ./storing/
 deploy:
   kubectl:
     manifests:
     - ./db/kubernetes/*
-    # - ./primary/kubernetes/*
-    # - ./handling/kubernetes/*
-    # - ./processing/kubernetes/*
-    # - ./displaying/kubernetes/*
+    - ./primary/kubernetes/*
+    - ./handling/kubernetes/*
+    - ./processing/kubernetes/*
+    - ./displaying/kubernetes/*
     - ./storing/kubernetes/*
