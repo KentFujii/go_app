@@ -6,7 +6,8 @@ import (
 	"read_write_files"
 	"csv_store"
 	"gob_store"
-	"gorm_store"
+	"sql_store1"
+	// "gorm_store"
 )
 
 func main() {
@@ -18,8 +19,11 @@ func main() {
 	http.HandleFunc("/csv_store", csv_store.Process)
 	// curl localhost:50005/gob_store
 	http.HandleFunc("/gob_store", gob_store.Process)
+	// curl localhost:50005/sql_store1
+	http.HandleFunc("/sql_store1", sql_store1.Process)
+
 	// curl localhost:50005/gorm_store
-	http.HandleFunc("/gorm_store", gorm_store.Process)
+	// http.HandleFunc("/gorm_store", gorm_store.Process)
 
 	http.ListenAndServe(":50005", nil)
 }
