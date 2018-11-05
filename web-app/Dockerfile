@@ -20,5 +20,5 @@ RUN go get -u github.com/lib/pq
 
 WORKDIR /go/src
 COPY . /go/src
-RUN go build -o web_app
-CMD ["./web_app"]
+RUN go build -o web-app
+CMD ["./web-app"]

@@ -14,6 +14,8 @@ build:
     context: ./displaying/
   - image: storing
     context: ./storing/
+  - image: web-app
+    context: ./web-app/
 deploy:
   kubectl:
     manifests:
@@ -23,3 +25,4 @@ deploy:
     - ./processing/kubernetes/*
     - ./displaying/kubernetes/*
     - ./storing/kubernetes/*
+    - ./web-app/kubernetes/*

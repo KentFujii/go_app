@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web_app
+  name: web-app
   labels:
-    app: web_app
+    app: web-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web_app
+      app: web-app
   template:
     metadata:
       labels:
-        app: web_app
+        app: web-app
     spec:
       containers:
-      - name: web_app
-        image: web_app
+      - name: web-app
+        image: web-app
         ports:
         - containerPort: 50006
