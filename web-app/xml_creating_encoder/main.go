@@ -50,7 +50,8 @@ func Process(_ http.ResponseWriter, _ *http.Request) {
 		fmt.Print(err)
 	}
 	str := string(b)
-	fmt.Println(str)}
+	fmt.Println(str)
+}
 
 func filePath(name string) string {
 	_, filename, _, ok := runtime.Caller(0)
