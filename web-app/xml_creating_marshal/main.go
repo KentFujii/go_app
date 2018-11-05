@@ -5,7 +5,6 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
-	"os"
 	"runtime"
 	"path"
 )
@@ -31,6 +30,7 @@ func Process(_ http.ResponseWriter, _ *http.Request) {
 			Name: "Sau Sheong",
 		},
 	}
+
 	output, err := xml.MarshalIndent(&post, "", "\t")
 	if err != nil {
 		fmt.Println("Error marshalling to XML:", err)
@@ -41,21 +41,13 @@ func Process(_ http.ResponseWriter, _ *http.Request) {
 		fmt.Println("Error writing XML to file:", err)
 		return
 	}
-	xmlFile, err := os.Open(filePath("post.xml"))
-	if err != nil {
-		fmt.Println("Error opening XML file:", err)
-		return
-	}
-	defer xmlFile.Close()
-	xmlData, err := ioutil.ReadAll(xmlFile)
-	if err != nil {
-		fmt.Println("Error reading XML data:", err)
-		return
-	}
-	xmlStr := string(xmlData)
-	fmt.Println(xmlStr)
 
-
+	b, err := ioutil.ReadFile(filePath("post.xml"))
+	if err != nil {
+		fmt.Print(err)
+	}
+	str := string(b)
+	fmt.Println(str)
 }
 
 func filePath(name string) string {
