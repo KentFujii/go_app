@@ -6,6 +6,7 @@ import (
 	"xml_parsing_unmarshal_2"
 	"xml_parsing_decoder"
 	"xml_creating_marshal"
+	"xml_creating_encoder"
 )
 
 func main() {
@@ -18,5 +19,6 @@ func main() {
 	// curl localhost:50006/xml_creating_marshal
 	http.HandleFunc("/xml_creating_marshal", xml_creating_marshal.Process)
 	// curl localhost:50006/xml_creating_encoder
+	http.HandleFunc("/xml_creating_encoder", xml_creating_encoder.Process)
 	http.ListenAndServe(":50006", nil)
 }
