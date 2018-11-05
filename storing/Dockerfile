@@ -13,8 +13,6 @@ ENV GOBIN /usr/local/go/bin
 ENV GOPATH /go
 ENV PATH $PATH:/usr/local/go/bin
 
-RUN go get -u github.com/motemen/gore
-RUN go get -u github.com/d4l3k/go-pry
 RUN go get -u github.com/derekparker/delve/cmd/dlv
 RUN go get -u github.com/jinzhu/gorm
 RUN go get -u github.com/lib/pq
