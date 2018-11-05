@@ -7,7 +7,8 @@ import (
 	"csv_store"
 	"gob_store"
 	"sql_store1"
-	// "gorm_store"
+	"sql_store2"
+	"gorm_store"
 )
 
 func main() {
@@ -21,9 +22,10 @@ func main() {
 	http.HandleFunc("/gob_store", gob_store.Process)
 	// curl localhost:50005/sql_store1
 	http.HandleFunc("/sql_store1", sql_store1.Process)
-
+	// curl localhost:50005/sql_store2
+	http.HandleFunc("/sql_store2", sql_store2.Process)
 	// curl localhost:50005/gorm_store
-	// http.HandleFunc("/gorm_store", gorm_store.Process)
+	http.HandleFunc("/gorm_store", gorm_store.Process)
 
 	http.ListenAndServe(":50005", nil)
 }

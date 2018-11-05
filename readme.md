@@ -6,34 +6,44 @@ https://github.com/GoogleContainerTools/skaffold/tree/master/examples/microservi
 
 https://qiita.com/tomoyamachi/items/660bd7bb3afff8340307
 
-## 簡単なWebアプリケーション
+## 構成
 
-primary
+### db
 
-## net/httpライブラリを使ったリクエストの受け付け
+どのコンテナからもアクセスできるposgtresqlデータベース
 
-handling
+```
+psql -h db -U gp gp
+```
 
-## リクエストのデータ構造とその処理
+### primary
 
-processing
+簡単なWebアプリケーション
 
-## テンプレートエンジンを使ったコンテンツの表示
+### handling
 
-displaying
+net/httpライブラリを使ったリクエストの受け付け
 
-## データの記憶: 構造体・ファイル・データベース
+### processing
 
-storing
+リクエストのデータ構造とその処理
 
-## GoによるWebサービスの作成: XMLおよびJSONの生成と解析
+### displaying
 
-web_service
+テンプレートエンジンを使ったコンテンツの表示
 
-## テスト用ライブラリを使ったアプリケーションのテスト
+## storing
 
-test_app
+データの記憶: 構造体・ファイル・データベース
 
-## ゴルーチンとチャネルを使った並行処理
+## web_service
 
-concurrency
+GoによるWebサービスの作成: XMLおよびJSONの生成と解析
+
+## test_app
+
+テスト用ライブラリを使ったアプリケーションのテスト
+
+## concurrency
+
+ゴルーチンとチャネルを使った並行処理
