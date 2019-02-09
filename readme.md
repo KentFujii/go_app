@@ -26,18 +26,18 @@ net/httpライブラリを使ったリクエストの受け付け
 
 テンプレートエンジンを使ったコンテンツの表示
 
-## storing
+### storing
 
 データの記憶: 構造体・ファイル・データベース
 
-## web_service
+### web_service
 
 GoによるWebサービスの作成: XMLおよびJSONの生成と解析
 
-## test_app
+### test_app
 
 テスト用ライブラリを使ったアプリケーションのテスト
 
-## concurrency
+### concurrency
 
 ゴルーチンとチャネルを使った並行処理
