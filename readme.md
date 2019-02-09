@@ -8,13 +8,7 @@ https://qiita.com/tomoyamachi/items/660bd7bb3afff8340307
 
 ## 構成
 
-### db
-
-どのコンテナからもアクセスできるposgtresqlデータベース
-
-```
-psql -h db -U gp gp
-```
+下記それぞれのディレクトリがそれぞれ一つのPodとしてk8sに収まるようになっている
 
 ### primary
 

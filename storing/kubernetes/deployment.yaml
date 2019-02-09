@@ -19,3 +19,5 @@ spec:
         image: storing
         ports:
         - containerPort: 50005
+      - name: db
+        image: db

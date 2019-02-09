@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db
+  name: service
   labels:
-    app: db
+    app: service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: db
+      app: service
   template:
     metadata:
       labels:
-        app: db
+        app: service
     spec:
       containers:
-      - name: db
-        image: db
+      - name: service
+        image: service
         ports:
-        - containerPort: 5432
+        - containerPort: 50006
