@@ -29,7 +29,7 @@ var Db *gorm.DB
 // connect to the Db
 func init() {
 	var err error
-	Db, err = gorm.Open("postgres", "host=localhost port=5432 user=gp dbname=gp password=gp sslmode=disable")
+	Db, err = gorm.Open("postgres", "host=db port=5432 user=gp dbname=gp password=gp sslmode=disable")
 	if err != nil {
 		panic(err)
 	}

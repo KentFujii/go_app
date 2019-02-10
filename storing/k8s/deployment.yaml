@@ -14,10 +14,12 @@ spec:
       labels:
         app: storing
     spec:
+      initContainers:
+      - name: check-pg-isready
+        image: db
+        command: ['sh', '-c', 'until pg_isready -h db -p 5432; do echo waiting for database; sleep 2; done']
       containers:
       - name: storing
         image: storing
         ports:
         - containerPort: 50005
-      - name: db
-        image: db

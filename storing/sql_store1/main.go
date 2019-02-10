@@ -19,7 +19,7 @@ var Db *sql.DB
 func init() {
 	fmt.Println("connect to DB")
 	var err error
-	Db, err = sql.Open("postgres", "host=localhost port=5432 user=gp dbname=gp password=gp sslmode=disable")
+	Db, err = sql.Open("postgres", "host=db port=5432 user=gp dbname=gp password=gp sslmode=disable")
 	if err != nil {
 		panic(err)
 	}

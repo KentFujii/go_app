@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-app
+  name: db
   labels:
-    app: web-app
+    app: db
 spec:
   clusterIP: None
   ports:
-    - port: 50006
-      targetPort: 50006
+    - port: 5432
+      targetPort: 5432
       protocol: TCP
-      name: web-app
+      name: db
   selector:
-    app: web-app
+    app: db

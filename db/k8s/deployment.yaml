@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app
+  name: db
   labels:
-    app: web-app
+    app: db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web-app
+      app: db
   template:
     metadata:
       labels:
-        app: web-app
+        app: db
     spec:
       containers:
-      - name: web-app
-        image: web-app
+      - name: db
+        image: db
         ports:
-        - containerPort: 50006
+        - containerPort: 5432
