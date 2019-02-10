@@ -42,28 +42,70 @@ curl localhost:50002/chain_handler
 
 ```ocurl
 curl localhost:50003/headers
+
 curl -id "first_name=Kent&last_name=Fujii" localhost:50003/body
-curl -id "hello=aaa&post=123" http://localhost:50003/process?thread=3
+
+curl -id "hello=aaa&post=123" http://localhost:50003/form?thread=3
+
 curl -i http://localhost:50003/fileupload -F "uploaded=@test.txt"
+
 curl -i http://localhost:50003/formfile -F "uploaded=@test.txt"
-curl localhost:50003/write
-curl localhost:50003/writeheader
-curl localhost:50003/redirect
-curl localhost:50003/json
-curl localhost:50003/set_cookie
-curl localhost:50003/get_cookie
+
+curl -i localhost:50003/write
+curl -i localhost:50003/writeheader
+curl -i localhost:50003/redirect
+curl -i localhost:50003/json
+
+curl -i -c cookie.txt localhost:50003/set_cookie
+curl -i -b cookie.txt localhost:50003/get_cookie
+
+curl -i -c cookie.txt localhost:50003/set_message
+curl -i -c cookie.txt -b cookie.txt localhost:50003/show_message
 ```
 
 ### displaying
 
 テンプレートエンジンを使ったコンテンツの表示
 
+```
+curl localhost:50004/trigger_template
+
+curl localhost:50004/random_number
+
+curl localhost:50004/iterator
+
+curl localhost:50004/set_dot
+
+curl localhost:50004/include
+
+curl localhost:50004/custom_function
+
+curl localhost:50004/context_aware
+
+curl localhost:50004/nested_1
+
+curl localhost:50004/nested_2
+```
+
 ### storing
 
 データの記憶: 構造体・ファイル・データベース
 
-pg_isready -h localhost -U gp
-psql -h localhost -U gp gp
+```
+curl localhost:50005/map_store
+
+curl localhost:50005/read_write_file
+
+curl localhost:50005/csv_store
+
+curl localhost:50005/gob_store
+
+curl localhost:50005/sql_store1
+
+curl localhost:50005/sql_store2
+
+curl localhost:50005/gorm_store
+```
 
 ### service
 
@@ -76,3 +118,13 @@ GoによるWebサービスの作成: XMLおよびJSONの生成と解析
 ### concurrency
 
 ゴルーチンとチャネルを使った並行処理
+
+### db
+
+各プロジェクトが利用するDB
+
+```
+pg_isready -h localhost -U gp
+psql -h localhost -U gp gp
+```
+
