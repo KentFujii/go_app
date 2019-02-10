@@ -136,6 +136,10 @@ curl -i -X DELETE localhost:50006/web_service/1
 
 テスト用ライブラリを使ったアプリケーションのテスト
 
+```
+curl
+```
+
 ### concurrency
 
 ゴルーチンとチャネルを使った並行処理
