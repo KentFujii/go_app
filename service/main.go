@@ -11,6 +11,7 @@ import (
 	"json_parsing_decoder"
 	"json_creating_marshal"
 	"json_creating_encoder"
+	"web_service"
 )
 
 func main() {
@@ -31,6 +32,8 @@ func main() {
 	http.HandleFunc("/json_creating_marshal", json_creating_marshal.Process)
 
 	http.HandleFunc("/json_creating_encoder", json_creating_encoder.Process)
+
+	http.HandleFunc("/web_service/", web_service.Process)
 
 	http.ListenAndServe(":50006", nil)
 }

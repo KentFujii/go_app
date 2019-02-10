@@ -126,8 +126,12 @@ curl localhost:50006/json_parsing_unmarshal
 
 curl localhost:50006/json_parsing_decoder
 
-```
+curl -i X POST -H "Content-Type: application/json" -d '{"content":"Myfirstpost", "author":"KentFujii"}' localhost:50006/web_service/
+curl -i -X GET localhost:50006/web_service/1
+curl -i -X PUT -H "Content-Type: application/json" -d '{"content":"MySecondpost", "author":"KentFujii"}' localhost:50006/web_service/1
+curl -i -X DELETE localhost:50006/web_service/1
 
+```
 ### test_app
 
 テスト用ライブラリを使ったアプリケーションのテスト
