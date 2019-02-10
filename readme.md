@@ -111,6 +111,23 @@ curl localhost:50005/gorm_store
 
 GoによるWebサービスの作成: XMLおよびJSONの生成と解析
 
+```
+curl localhost:50006/xml_parsing_unmarshal_1
+
+curl localhost:50006/xml_parsing_unmarshal_2
+
+curl localhost:50006/xml_parsing_decoder
+
+curl localhost:50006/xml_creating_marshal
+
+curl localhost:50006/xml_creating_encoder
+
+curl localhost:50006/json_parsing_unmarshal
+
+curl localhost:50006/json_parsing_decoder
+
+```
+
 ### test_app
 
 テスト用ライブラリを使ったアプリケーションのテスト

@@ -31,7 +31,7 @@ func Process(_ http.ResponseWriter, _ *http.Request) {
 		},
 	}
 
-	output, err := xml.MarshalIndent(&post, "", "\t")
+	output, err := xml.MarshalIndent(&post, "", "  ")
 	if err != nil {
 		fmt.Println("Error marshalling to XML:", err)
 		return

@@ -14,8 +14,8 @@ build:
     context: ./displaying/
   - image: storing
     context: ./storing/
-  # - image: web-app
-  #   context: ./web-app/
+  - image: service
+    context: ./service/
 deploy:
   kubectl:
     manifests:
@@ -25,4 +25,4 @@ deploy:
     - ./processing/k8s/*
     - ./displaying/k8s/*
     - ./storing/k8s/*
-    # - ./web-app/k8s/*
+    - ./service/k8s/*

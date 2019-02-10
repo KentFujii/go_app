@@ -38,7 +38,7 @@ func Process(_ http.ResponseWriter, _ *http.Request) {
 		return
 	}
 	encoder := xml.NewEncoder(xmlFile)
-	encoder.Indent("", "\t")
+	encoder.Indent("", "  ")
 	err = encoder.Encode(&post)
 	if err != nil {
 		fmt.Println("Error encoding XML to file:", err)

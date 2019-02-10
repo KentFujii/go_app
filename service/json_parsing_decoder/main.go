@@ -1,4 +1,3 @@
-// リスト7.11
 package json_parsing_decoder
 
 import (
