@@ -13,6 +13,7 @@ ENV GOPATH /go
 ENV PATH $PATH:/usr/local/go/bin
 
 RUN go get -u github.com/derekparker/delve/cmd/dlv
+RUN go get -u github.com/lib/pq
 
 WORKDIR /go/src
 COPY . /go/src

@@ -126,7 +126,7 @@ curl localhost:50006/json_parsing_unmarshal
 
 curl localhost:50006/json_parsing_decoder
 
-curl -i X POST -H "Content-Type: application/json" -d '{"content":"Myfirstpost", "author":"KentFujii"}' localhost:50006/web_service/
+curl -i -X POST -H "Content-Type: application/json" -d '{"content":"Myfirstpost", "author":"KentFujii"}' localhost:50006/web_service/
 curl -i -X GET localhost:50006/web_service/1
 curl -i -X PUT -H "Content-Type: application/json" -d '{"content":"MySecondpost", "author":"KentFujii"}' localhost:50006/web_service/1
 curl -i -X DELETE localhost:50006/web_service/1
@@ -137,7 +137,16 @@ curl -i -X DELETE localhost:50006/web_service/1
 テスト用ライブラリを使ったアプリケーションのテスト
 
 ```
-curl
+
+kubectl exec -it test -- bash -c "cd unittest ; go test"
+kubectl exec -it test -- bash -c "cd unittest ; go test parallel_test.go -v -parallel 3"
+kubectl exec -it test -- bash -c "cd unittest ; go test -bench ."
+
+curl -i -X POST -H "Content-Type: application/json" -d '{"content":"Myfirstpost", "author":"KentFujii"}' localhost:50007/httptest_1/
+kubectl exec -it test -- bash -c "cd httptest_1 ; go test -v"
+
+curl -i -X POST -H "Content-Type: application/json" -d '{"content":"Myfirstpost", "author":"KentFujii"}' localhost:50007/httptest_2/
+kubectl exec -it test -- bash -c "cd httptest_2 ; go test -v"
 ```
 
 ### concurrency

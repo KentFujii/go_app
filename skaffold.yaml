@@ -2,8 +2,8 @@ apiVersion: skaffold/v1alpha4
 kind: Config
 build:
   artifacts:
-  # - image: db
-  #   context: ./db/
+  - image: db
+    context: ./db/
   # - image: primary
   #   context: ./primary/
   # - image: handling
@@ -21,7 +21,7 @@ build:
 deploy:
   kubectl:
     manifests:
-    # - ./db/k8s/*
+    - ./db/k8s/*
     # - ./primary/k8s/*
     # - ./handling/k8s/*
     # - ./processing/k8s/*
