@@ -17,13 +17,13 @@ var _ = Describe("Get a post", func() {
 	BeforeEach(func() {
 		post = &FakePost{}
 		mux = http.NewServeMux()
-		mux.HandleFunc("/post/", Process(post))
+		mux.HandleFunc("/ginkgo/", Process(post))
 		writer = httptest.NewRecorder()
 	})
 
 	Context("using an id", func() {
 		It("should get a post", func() {
-			request, _ := http.NewRequest("GET", "/post/1", nil)
+			request, _ := http.NewRequest("GET", "/ginkgo/1", nil)
 			mux.ServeHTTP(writer, request)
 
 			Expect(writer.Code).To(Equal(200))
@@ -37,7 +37,7 @@ var _ = Describe("Get a post", func() {
 
 	Context("using a non-integer id", func() {
 		It("should get a HTTP 500 response", func() {
-			request, _ := http.NewRequest("GET", "/post/hello", nil)
+			request, _ := http.NewRequest("GET", "/ginkgo/hello", nil)
 			mux.ServeHTTP(writer, request)
 
 			Expect(writer.Code).To(Equal(500))
