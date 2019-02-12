@@ -14,8 +14,8 @@ ENV PATH $PATH:/usr/local/go/bin
 
 RUN go get -u github.com/derekparker/delve/cmd/dlv
 RUN go get -u github.com/lib/pq
-RUN go get -u github.com/onsi/ginkgo
-RUN go get -u github.com/onsi/gomega
+RUN go get -u github.com/onsi/ginkgo/ginkgo
+RUN go get -u github.com/onsi/gomega/...
 
 WORKDIR /go/src
 COPY . /go/src
