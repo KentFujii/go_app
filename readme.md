@@ -6,6 +6,14 @@ https://github.com/GoogleContainerTools/skaffold/tree/master/examples/microservi
 
 https://qiita.com/tomoyamachi/items/660bd7bb3afff8340307
 
+## getting started
+
+開発環境にk8sを、CI/CDにskaffoldを使用しています
+
+```
+skaffold dev
+```
+
 ## 構成
 
 下記それぞれのディレクトリがそれぞれ一つのPodとしてk8sに収まるようになっている
