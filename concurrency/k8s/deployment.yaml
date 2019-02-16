@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: concurrency
+  labels:
+    app: concurrency
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: concurrency
+  template:
+    metadata:
+      labels:
+        app: concurrency
+    spec:
+      containers:
+      - name: concurrency
+        image: concurrency
+        ports:
+        - containerPort: 50008

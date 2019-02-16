@@ -163,6 +163,18 @@ kubectl exec -it test -- bash -c "cd di ; go test -v"
 
 ゴルーチンとチャネルを使った並行処理
 
+```
+kubectl exec -it concurrency -- bash -c "cd goroutine ; go test -v"
+
+kubectl exec -it concurrency -- bash -c "cd wait_group ; go test -v"
+
+kubectl exec -it concurrency -- bash -c "cd channel_wait ; go test -v"
+
+kubectl exec -it concurrency -- bash -c "cd channel_message ; go test -v"
+
+kubectl exec -it concurrency -- bash -c "cd channel_select ; go test -v"
+```
+
 ### db
 
 各プロジェクトが利用するDB

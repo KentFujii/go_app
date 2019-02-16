@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: concurrency
+  labels:
+    app: concurrency
+spec:
+  clusterIP: None
+  ports:
+    - port: 50008
+      targetPort: 50008
+      protocol: TCP
+      name: concurrency
+  selector:
+    app: concurrency
