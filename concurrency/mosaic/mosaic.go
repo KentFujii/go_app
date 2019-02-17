@@ -9,6 +9,8 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
+	"runtime"
+	"path"
 )
 
 type DB struct {
@@ -18,18 +20,14 @@ type DB struct {
 
 func (db *DB) nearest(target [3]float64) string {
 	var filename string
-	var smallest float64
 	db.mutex.Lock()
+	smallest := 1000000.0
 	for k, v := range db.store {
-		fmt.Println("aaaaaaa")
 		dist := distance(target, v)
-		if smallest != 0.0 {
-			if dist < smallest {
-				filename, smallest = k, dist
-			}
+		if dist < smallest {
+			filename, smallest = k, dist
 		}
 	}
-	delete(db.store, filename)
 	db.mutex.Unlock()
 	return filename
 }
@@ -81,9 +79,9 @@ func cloneTilesDB() DB {
 func tilesDB() map[string][3]float64 {
 	fmt.Println("Start populating tiles db ...")
 	db := make(map[string][3]float64)
-	files, _ := ioutil.ReadDir("tiles")
+	files, _ := ioutil.ReadDir(filePath("tiles"))
 	for _, f := range files {
-		name := filepath.Join("tiles", f.Name())
+		name := filepath.Join(filePath("tiles"), f.Name())
 		file, err := os.Open(name)
 		if err == nil {
 			img, _, err := image.Decode(file)
@@ -109,4 +107,12 @@ func distance(p1 [3]float64, p2 [3]float64) float64 {
 // find the square
 func sq(n float64) float64 {
 	return n * n
+}
+
+func filePath(name string) string {
+	_, filename, _, ok := runtime.Caller(0)
+	if !ok {
+		panic("No caller information")
+	}
+	return path.Dir(filename) + "/" + name
 }

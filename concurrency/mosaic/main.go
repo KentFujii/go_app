@@ -11,12 +11,10 @@ import (
 	"os"
 	"strconv"
 	"sync"
-	"time"
 )
 
 func Process(w http.ResponseWriter, r *http.Request) {
-	t0 := time.Now()
-	fmt.Println(t0)
+	TILESDB = tilesDB()
 	// get the content from the POSTed form
 	r.ParseMultipartForm(10485760) // max body in memory is 10MB
 	fileHeader := r.MultipartForm.File["uploaded"][0]
@@ -29,23 +27,14 @@ func Process(w http.ResponseWriter, r *http.Request) {
 	db := cloneTilesDB()
 	// // fan-out
 	c1 := cut(original, &db, tileSize, bounds.Min.X, bounds.Min.Y, bounds.Max.X/2, bounds.Max.Y/2)
-	fmt.Println(c1)
-	// c2 := cut(original, &db, tileSize, bounds.Max.X/2, bounds.Min.Y, bounds.Max.X, bounds.Max.Y/2)
-	// c3 := cut(original, &db, tileSize, bounds.Min.X, bounds.Max.Y/2, bounds.Max.X/2, bounds.Max.Y)
-	// c4 := cut(original, &db, tileSize, bounds.Max.X/2, bounds.Max.Y/2, bounds.Max.X, bounds.Max.Y)
-	// // fan-in
-	// c := combine(bounds, c1, c2, c3, c4)
-	// buf1 := new(bytes.Buffer)
-	// jpeg.Encode(buf1, original, nil)
-	// originalStr := base64.StdEncoding.EncodeToString(buf1.Bytes())
+	c2 := cut(original, &db, tileSize, bounds.Max.X/2, bounds.Min.Y, bounds.Max.X, bounds.Max.Y/2)
+	c3 := cut(original, &db, tileSize, bounds.Min.X, bounds.Max.Y/2, bounds.Max.X/2, bounds.Max.Y)
+	c4 := cut(original, &db, tileSize, bounds.Max.X/2, bounds.Max.Y/2, bounds.Max.X, bounds.Max.Y)
+	// fan-in
+	c := combine(bounds, c1, c2, c3, c4)
 
-	// t1 := time.Now()
-	// images := map[string]string{
-	// 	"original": originalStr,
-	// 	"mosaic":   <-c,
-	// 	"duration": fmt.Sprintf("%v ", t1.Sub(t0)),
-	// }
-	// fmt.Fprintln(w, images)
+	sDec, _ := base64.StdEncoding.DecodeString(<-c)
+	fmt.Fprintln(w, string(sDec))
 }
 
 // cut out the image and return individual channels with image.Image
@@ -59,7 +48,6 @@ func cut(original image.Image, db *DB, tileSize, x1, y1, x2, y2 int) <-chan imag
 			for x := x1; x < x2; x = x + tileSize {
 				r, g, b, _ := original.At(x, y).RGBA()
 				color := [3]float64{float64(r), float64(g), float64(b)}
-				fmt.Println(color)
 				nearest := db.nearest(color)
 				file, err := os.Open(nearest)
 				if err == nil {
