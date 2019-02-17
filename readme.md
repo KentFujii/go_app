@@ -174,7 +174,7 @@ kubectl exec -it concurrency -- bash -c "cd channel_message ; go test -v"
 
 kubectl exec -it concurrency -- bash -c "cd channel_select ; go test -v"
 
-curl http://localhost:50008/mosaic -F "tile_size=1" -F "uploaded=@cat.jpg" -o mosaic.jpg
+curl http://localhost:50008/mosaic -F "tile_size=5" -F "uploaded=@cat.jpg" -o mosaic.jpg
 ```
 
 ### db
