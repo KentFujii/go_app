@@ -142,7 +142,7 @@ curl -i -X PUT -H "Content-Type: application/json" -d '{"content":"MySecondpost"
 curl -i -X DELETE localhost:50006/web_service/1
 
 ```
-### test_app
+### test
 
 テスト用ライブラリを使ったアプリケーションのテスト
 
