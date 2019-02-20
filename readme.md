@@ -14,11 +14,11 @@ https://qiita.com/tomoyamachi/items/660bd7bb3afff8340307
 skaffold dev
 ```
 
-CNCFスタックでクラスターを監視します
+CNCFプロジェクト群でクラスターを監視します
 
 ## 構成
 
-下記それぞれのディレクトリがそれぞれ一つのPodとしてk8sに収まるようになっている
+下記それぞれのディレクトリがそれぞれ一つのPod/Deployment/Serviceとしてk8sに収まるようになっている
 
 ### primary
 
