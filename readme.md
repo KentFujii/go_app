@@ -1,10 +1,6 @@
 # go_app
 
-https://github.com/sausheong/gwp
-
-https://github.com/GoogleContainerTools/skaffold/tree/master/examples/microservices
-
-https://qiita.com/tomoyamachi/items/660bd7bb3afff8340307
+golang application programs
 
 ## getting started
 
