@@ -19,3 +19,7 @@ spec:
         image: primary
         ports:
         - containerPort: 50001
+      - name: primary-sidecar-fluentd
+        image: primary-sidecar-fluentd
+        ports:
+        - containerPort: 9001

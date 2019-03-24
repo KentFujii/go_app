@@ -12,6 +12,14 @@ skaffold dev
 
 CNCFプロジェクト群でクラスターを監視します
 
+### memo
+
+https://blog.treasuredata.com/blog/2016/07/19/routing-data-from-docker-to-prometheus-server-via-fluentd/
+docker pull fluent/fluentd:v0.12-debian
+https://hub.docker.com/r/fluent/fluentd/
+https://docs.fluentd.org/v0.12/articles/install-by-docker
+curl -X POST -d 'json={"json":"message"}' http://localhost:9880/sample.test
+
 ## 構成
 
 下記それぞれのディレクトリがそれぞれ一つのPod/Deployment/Serviceとしてk8sに収まるようになっている
