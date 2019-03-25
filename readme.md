@@ -18,7 +18,11 @@ https://blog.treasuredata.com/blog/2016/07/19/routing-data-from-docker-to-promet
 docker pull fluent/fluentd:v0.12-debian
 https://hub.docker.com/r/fluent/fluentd/
 https://docs.fluentd.org/v0.12/articles/install-by-docker
-curl -X POST -d 'json={"json":"message"}' http://localhost:9880/sample.test
+curl -X POST -d 'json={"json":"message"}' http://localhost:9001/sample.test
+https://docs.fluentd.org/v0.12/articles/docker-logging
+https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags
+https://gist.github.com/BretFisher/5e1a0c7bcca4c735e716abf62afad389
+https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/fluentd-daemonset-forward.yaml
 
 ## 構成
 
