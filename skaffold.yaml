@@ -30,6 +30,8 @@ deploy:
   kubectl:
     manifests:
     # - ./db/k8s/*
+    # - ./monitor/k8s/*
+    # - ./dashboard/k8s/*
     - ./primary/k8s/*
     # - ./handling/k8s/*
     # - ./processing/k8s/*
