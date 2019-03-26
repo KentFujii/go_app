@@ -10,8 +10,6 @@ golang application programs
 skaffold dev
 ```
 
-CNCFプロジェクト群でクラスターを監視します
-
 ## 構成
 
 下記それぞれのディレクトリがそれぞれ一つのPod/Deployment/Serviceとしてk8sに収まるようになっている
@@ -184,3 +182,10 @@ pg_isready -h localhost -U gp
 psql -h localhost -U gp gp
 ```
 
+### monitor
+
+各プロジェクトのメトリクスを取得する
+
+### dashboard
+
+メトリクスrを可視化

@@ -19,3 +19,16 @@ spec:
         image: primary
         ports:
         - containerPort: 50001
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+      - name: primary-sidecar-fluentd
+        image: primary-sidecar-fluentd
+        ports:
+        - containerPort: 9001
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+      volumes:
+      - name: varlog
+        emptyDir: {}

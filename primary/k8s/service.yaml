@@ -11,5 +11,9 @@ spec:
       targetPort: 50001
       protocol: TCP
       name: primary
+    - port: 9001
+      targetPort: 9001
+      protocol: TCP
+      name: primary-sidecar-fluentd
   selector:
     app: primary
