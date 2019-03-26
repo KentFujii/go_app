@@ -1,8 +1,6 @@
 # A job to scrape an endpoint of Fluentd running on localhost.
 scrape_configs:
-- job_name: fluentd
- scrape_interval: 5s
- target_groups:
-   - targets:
-       - 'localhost:9001'
- metrics_path: /metrics
+  - job_name: fluentd
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['primary:9001']

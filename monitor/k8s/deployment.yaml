@@ -18,4 +18,4 @@ spec:
       - name: monitor
         image: monitor
         ports:
-        - containerPort: 50002
+        - containerPort: 9090
