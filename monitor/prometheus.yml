@@ -1,4 +1,3 @@
-# A job to scrape an endpoint of Fluentd running on localhost.
 scrape_configs:
   - job_name: fluentd
     scrape_interval: 5s

@@ -10,7 +10,3 @@ spec:
       protocol: TCP
       port: 50001
       targetPort: 50001
-    - name: primary-sidecar
-      protocol: TCP
-      port: 9001
-      targetPort: 9001
