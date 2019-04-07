@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: handling
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: handling
+  template:
+    metadata:
+      labels:
+        app: handling
+    spec:
+      containers:
+      - name: handling
+        image: handling
+        ports:
+        - containerPort: 50002
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+      - name: sidecar
+        image: sidecar
+        ports:
+        - containerPort: 9002
+        volumeMounts:
+        - name: fluentd-handling
+          mountPath: /fluentd/etc
+        - name: varlog
+          mountPath: /var/log
+      volumes:
+      - name: fluentd-handling
+        configMap:
+          name: fluentd-handling
+      - name: varlog
+        emptyDir: {}

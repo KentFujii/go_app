@@ -22,14 +22,16 @@ spec:
           mountPath: /var/log
       - name: sidecar
         image: sidecar
+        ports:
+        - containerPort: 9001
         volumeMounts:
-        - name: fluentd-config
+        - name: fluentd-primary
           mountPath: /fluentd/etc
         - name: varlog
           mountPath: /var/log
       volumes:
-      - name: fluentd-config
+      - name: fluentd-primary
         configMap:
-          name: fluentd-config
+          name: fluentd-primary
       - name: varlog
         emptyDir: {}

@@ -1,5 +1,9 @@
 scrape_configs:
-  - job_name: fluentd
+  - job_name: primary
     scrape_interval: 5s
     static_configs:
     - targets: ['primary:9001']
+  - job_name: handling
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['handling:9002']

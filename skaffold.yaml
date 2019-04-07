@@ -6,14 +6,14 @@ build:
   #   context: ./db/
   - image: monitor
     context: ./monitor/
-  # - image: dashboard
-  #   context: ./dashboard/
+  - image: dashboard
+    context: ./dashboard/
   - image: sidecar
     context: ./sidecar/
   - image: primary
     context: ./primary/
-  # - image: handling
-  #   context: ./handling/
+  - image: handling
+    context: ./handling/
   # - image: processing
   #   context: ./processing/
   # - image: displaying
@@ -29,14 +29,14 @@ build:
 deploy:
   kubectl:
     manifests:
-    # - ./kubernetes/db/*
-    - ./kubernetes/monitor*
-    # - ./kubernetes/dashboard/*
-    - ./kubernetes/primary/*
-    # - ./kubernetes/handling/*
-    # - ./kubernetes/processing/*
-    # - ./kubernetes/displaying/*
-    # - ./kubernetes/storing/*
-    # - ./kubernetes/service/*
-    # - ./kubernetes/test/*
-    # - ./kubernetes/concurrency/*
+    # - ./k8s/db/*
+    - ./k8s/monitor*
+    - ./k8s/dashboard/*
+    - ./k8s/primary/*
+    - ./k8s/handling/*
+    # - ./k8s/processing/*
+    # - ./k8s/displaying/*
+    # - ./k8s/storing/*
+    # - ./k8s/service/*
+    # - ./k8s/test/*
+    # - ./k8s/concurrency/*
