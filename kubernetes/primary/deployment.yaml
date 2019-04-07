@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: primary
-  labels:
-    app: primary
 spec:
   replicas: 1
   selector:
@@ -22,13 +20,18 @@ spec:
         volumeMounts:
         - name: varlog
           mountPath: /var/log
-      - name: primary-sidecar-fluentd
-        image: primary-sidecar-fluentd
+      - name: sidecar
+        image: sidecar
         ports:
         - containerPort: 9001
         volumeMounts:
+        - name: fluentd-config
+          mountPath: /fluentd/etc
         - name: varlog
           mountPath: /var/log
       volumes:
+      - name: fluentd-config
+        configMap:
+          name: fluentd-config
       - name: varlog
         emptyDir: {}

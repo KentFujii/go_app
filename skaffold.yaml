@@ -1,42 +1,42 @@
-apiVersion: skaffold/v1alpha4
+apiVersion: skaffold/v1beta7
 kind: Config
 build:
   artifacts:
-  - image: db
-    context: ./db/
+  # - image: db
+  #   context: ./db/
   - image: monitor
     context: ./monitor/
   # - image: dashboard
   #   context: ./dashboard/
+  - image: sidecar
+    context: ./sidecar/
   - image: primary
     context: ./primary/
-  - image: primary-sidecar-fluentd
-    context: ./primary/sidecar/fluentd
-  - image: handling
-    context: ./handling/
-  - image: processing
-    context: ./processing/
-  - image: displaying
-    context: ./displaying/
-  - image: storing
-    context: ./storing/
-  - image: service
-    context: ./service/
-  - image: test
-    context: ./test/
-  - image: concurrency
-    context: ./concurrency/
+  # - image: handling
+  #   context: ./handling/
+  # - image: processing
+  #   context: ./processing/
+  # - image: displaying
+  #   context: ./displaying/
+  # - image: storing
+  #   context: ./storing/
+  # - image: service
+  #   context: ./service/
+  # - image: test
+  #   context: ./test/
+  # - image: concurrency
+  #   context: ./concurrency/
 deploy:
   kubectl:
     manifests:
-    - ./db/k8s/*
-    - ./monitor/k8s/*
-    # - ./dashboard/k8s/*
-    - ./primary/k8s/*
-    - ./handling/k8s/*
-    - ./processing/k8s/*
-    - ./displaying/k8s/*
-    - ./storing/k8s/*
-    - ./service/k8s/*
-    - ./test/k8s/*
-    - ./concurrency/k8s/*
+    # - ./kubernetes/db/*
+    # - ./kubernetes/monitor*
+    # - ./kubernetes/dashboard/*
+    - ./kubernetes/primary/*
+    # - ./kubernetes/handling/*
+    # - ./kubernetes/processing/*
+    # - ./kubernetes/displaying/*
+    # - ./kubernetes/storing/*
+    # - ./kubernetes/service/*
+    # - ./kubernetes/test/*
+    # - ./kubernetes/concurrency/*

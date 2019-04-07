@@ -182,10 +182,12 @@ pg_isready -h localhost -U gp
 psql -h localhost -U gp gp
 ```
 
+### sidecar
+
 ### monitor
 
 各プロジェクトのメトリクスを取得する
 
 ### dashboard
 
-メトリクスrを可視化
+メトリクスを可視化
