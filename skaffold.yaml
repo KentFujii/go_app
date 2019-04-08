@@ -6,8 +6,6 @@ build:
   #   context: ./db/
   - image: monitor
     context: ./monitor/
-  - image: dashboard
-    context: ./dashboard/
   - image: sidecar
     context: ./sidecar/
   - image: primary
@@ -31,7 +29,6 @@ deploy:
     manifests:
     # - ./k8s/db/*
     - ./k8s/monitor*
-    - ./k8s/dashboard/*
     - ./k8s/primary/*
     - ./k8s/handling/*
     # - ./k8s/processing/*

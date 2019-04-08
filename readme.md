@@ -184,10 +184,9 @@ psql -h localhost -U gp gp
 
 ### sidecar
 
+メトリクスをバッファする
+
 ### monitor
 
-各プロジェクトのメトリクスを取得する
+各プロジェクトのメトリクスを監視する
 
-### dashboard
-
-メトリクスを可視化
