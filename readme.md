@@ -181,12 +181,3 @@ curl http://localhost:50008/mosaic -F "tile_size=5" -F "uploaded=@cat.jpg" -o mo
 pg_isready -h localhost -U gp
 psql -h localhost -U gp gp
 ```
-
-### sidecar
-
-メトリクスをバッファする
-
-### monitor
-
-各プロジェクトのメトリクスを監視する
-
