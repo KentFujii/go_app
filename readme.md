@@ -12,7 +12,7 @@ skaffold dev
 
 ## 構成
 
-下記それぞれのディレクトリがそれぞれ一つのPod/Deployment/Serviceとしてk8sに収まるようになっている
+それぞれのディレクトリがそれぞれ一つのPod/Deployment/Serviceとしてk8sに収まるようになっている
 
 ### primary
 
@@ -181,3 +181,9 @@ curl http://localhost:50008/mosaic -F "tile_size=5" -F "uploaded=@cat.jpg" -o mo
 pg_isready -h localhost -U gp
 psql -h localhost -U gp gp
 ```
+
+### go-kit
+
+マイクロフレームワーク
+
+https://github.com/go-kit/kit/tree/master/examples

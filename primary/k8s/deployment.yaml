@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: monitor
+  name: primary
+  labels:
+    app: primary
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: monitor
+      app: primary
   template:
     metadata:
       labels:
-        app: monitor
+        app: primary
     spec:
       containers:
-      - name: monitor
-        image: monitor
+      - name: primary
+        image: primary
         ports:
-        - containerPort: 9090
+        - containerPort: 50001
