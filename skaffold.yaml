@@ -2,33 +2,36 @@ apiVersion: skaffold/v1beta7
 kind: Config
 build:
   artifacts:
-  - image: db
-    context: ./db/
+  # - image: db
+  #   context: ./db/
   - image: primary
     context: ./primary/
-  - image: handling
-    context: ./handling/
-  - image: processing
-    context: ./processing/
-  - image: displaying
-    context: ./displaying/
-  - image: storing
-    context: ./storing/
-  - image: service
-    context: ./service/
-  - image: test
-    context: ./test/
-  - image: concurrency
-    context: ./concurrency/
+  # - image: handling
+  #   context: ./handling/
+  # - image: processing
+  #   context: ./processing/
+  # - image: displaying
+  #   context: ./displaying/
+  # - image: storing
+  #   context: ./storing/
+  # - image: service
+  #   context: ./service/
+  # - image: test
+  #   context: ./test/
+  # - image: concurrency
+  #   context: ./concurrency/
+  - image: gokit
+    context: ./gokit/
 deploy:
   kubectl:
     manifests:
-    - ./db/k8s/*
+    # - ./db/k8s/*
     - ./primary/k8s/*
-    - ./handling/k8s/*
-    - ./processing/k8s/*
-    - ./displaying/k8s/*
-    - ./storing/k8s/*
-    - ./service/k8s/*
-    - ./test/k8s/*
-    - ./concurrency/k8s/*
+    # - ./handling/k8s/*
+    # - ./processing/k8s/*
+    # - ./displaying/k8s/*
+    # - ./storing/k8s/*
+    # - ./service/k8s/*
+    # - ./test/k8s/*
+    # - ./concurrency/k8s/*
+    - ./gokit/k8s/*

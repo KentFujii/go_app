@@ -4,7 +4,7 @@ golang application programs
 
 ## getting started
 
-開発環境にk8sを、CI/CDにskaffoldを使用しています
+開発環境にk8sを、CI/CDにskaffold-v0.29.0を使用しています
 
 ```
 skaffold dev

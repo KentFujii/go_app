@@ -13,9 +13,11 @@ ENV GOPATH /go
 ENV PATH $PATH:/usr/local/go/bin
 
 RUN go get -u github.com/derekparker/delve/cmd/dlv
-RUN go get -u github.com/go-kit/kit
+RUN go get -u github.com/go-kit/kit/endpoint
+RUN go get -u github.com/go-kit/kit/transport/http
+
 
 WORKDIR /go/src
 COPY . /go/src
-RUN go build -o go_kit
-CMD ["./go_kit"]
+RUN go build -o gokit
+CMD ["./gokit"]

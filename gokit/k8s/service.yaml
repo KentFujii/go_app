@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: go_kit
+  name: gokit
   labels:
-    app: go_kit
+    app: gokit
 spec:
   clusterIP: None
   ports:
-    - name: go_kit
+    - name: gokit
       protocol: TCP
-      port: 50002
-      targetPort: 50002
+      port: 50009
+      targetPort: 50009
   selector:
-    app: go_kit
+    app: gokit

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gokit
+  labels:
+    app: gokit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gokit
+  template:
+    metadata:
+      labels:
+        app: gokit
+    spec:
+      containers:
+      - name: gokit
+        image: gokit
+        ports:
+        - containerPort: 50009
