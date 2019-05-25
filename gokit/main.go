@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	svc := &service.String{}
+	var svc service.String
 
 	tpuc := transport.Uppercase{}
 	tpc := transport.Count{}
