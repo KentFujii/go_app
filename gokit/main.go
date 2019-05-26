@@ -10,14 +10,13 @@ import (
 	httptransport "github.com/go-kit/kit/transport/http"
 )
 
-// type stringService interface {
-// 	Uppercase(string) (string, error)
-// 	Count(string) int
-// }
-
 func main() {
 	logger := log.NewLogfmtLogger(os.Stderr)
-	svc := &logging.LoggingMiddleware{Logger: logger, Next: &service.String{}}
+
+	svc := &logging.LoggingMiddleware{
+		Logger: logger,
+		Next: &service.String{},
+	}
 
 	tpuc := transport.Uppercase{}
 	tpc := transport.Count{}
