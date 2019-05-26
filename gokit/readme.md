@@ -1,8 +1,7 @@
 ### gokit
 
-マイクロフレームワーク
+マイクロフレームワークgokitを使ったアプリケーション構築のチュートリアル
 
-https://github.com/go-kit/kit/tree/master/examples
 https://gokit.io/examples/stringsvc.html
 
 ```
