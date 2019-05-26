@@ -15,6 +15,7 @@ ENV PATH $PATH:/usr/local/go/bin
 RUN go get -u github.com/derekparker/delve/cmd/dlv
 RUN go get -u github.com/go-kit/kit/endpoint
 RUN go get -u github.com/go-kit/kit/transport/http
+RUN go get -u github.com/go-kit/kit/log
 
 
 WORKDIR /go/src
